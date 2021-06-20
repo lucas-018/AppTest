@@ -23,6 +23,17 @@ h2
   font-size: 2.0em;
 }
 
+figcaption
+{
+  font-family: "Courier New";
+  font-size: 1.1em;
+  text-align: center;
+}
+
+figure > img{
+  width:500px;
+}
+
 .introduction
 {
   text-align: center;
@@ -52,6 +63,23 @@ h2
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+#work_zone
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#graph_zone
+{
+  width=70%;
+  margin-left=50px;
+}
+
+#graph
+{
+  float: right;
 }
 
 #title_section
