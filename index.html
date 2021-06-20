@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <title>Calculette</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <meta charset="utf-8" />
+      <title>Calculette</title>
     </head>
 
     <body>
+      <div class = "section" id = "title_section">
       <h1>Calculette</h1>
-        <p>Ceci est une bonne application.</p>
-        <a href="index.html">Lien vers cette même page.</a>
+        <p class="introduction" > Ceci est une bonne application.</p>
+      </div>
 
-      <h2> Définissez vos objectifs </h2>
-        <p>Ici, vous pouvez définir vos premiers objectifs d'investissement et construire la première version d'un plan pour y parvenir. Ne vous inquiétez pas,vous pourrez toujours les faire évoluer.</p>
-        <a href="index.html">Lien vers cette même page.</a>
+      <div id="container">
+        <div class="section" id = "objective_section">
+          <h2> Définissez vos objectifs </h2>
+            <p>Ici, vous pouvez définir vos premiers objectifs d'investissement et construire la première version d'un plan pour y parvenir. Ne vous inquiétez pas,vous pourrez toujours les faire évoluer.</p>
+            <form id="objectives_form">
+              <div><input type="text" id="field_1" placeholder="Value 1" /></div>
+              <div><input type="text" id="field_2" placeholder="Value 2" /></div>
+              <div><input type="text" id="field_3" placeholder="Value 3" /></div>
+              <select id="selection">
+                <option>Choisissez une valeur</option>
+                <option value="choice_1">Choice 1</option>
+                <option value="choice_2">Choice 2</option>
+                <option value="choice_3">Choice 3</option>
+              </select>
+            </div>
+          </form>
+        </div>
 
-      <h2> Suivez votre avancement </h2>
-        <p>Ici, vous pouvez renseigner votre avancement au fur et à mesure pour le comparer avec vos objectifs. Si vous vous en écartez, pas d'inquiétude ! Nous vous proposerons d'autres plans mis à jour pour tenir vos objectifs, ou de nouveaux objectifs plus réalistes, compte tenu de votre situation actuelle.</p>
-        <a href="index.html">Lien vers cette même page.</a>
+        <div class="section" id = "advancement_section">
+          <h2> Suivez votre avancement </h2>
+            <p>Ici, vous pouvez renseigner votre avancement au fur et à mesure pour le comparer avec vos objectifs. Si vous vous en écartez, pas d'inquiétude ! Nous vous proposerons d'autres plans mis à jour pour tenir vos objectifs, ou de nouveaux objectifs plus réalistes, compte tenu de votre situation actuelle.</p>
+        </div>
 
-      <h2> Votre plan mis à jour </h2>
-        <p> C'est ici que vous retrouvez une projection de vos résultats dans le futur et en fonction de votre avancement réel, une proposition de plan mis à jour pour tenir vos objectifs, ou des suggestions pour faire évoluer vos objectifs ! </p>
-        <a href="index.html">Lien vers cette même page.</a>
+        <div class="section" id = "plan_proposition_section">
+          <h2> Votre plan mis à jour </h2>
+            <p> C'est ici que vous retrouvez une projection de vos résultats dans le futur et en fonction de votre avancement réel, une proposition de plan mis à jour pour tenir vos objectifs, ou des suggestions pour faire évoluer vos objectifs ! </p>
+        </div>
+      </div>
 
     </body>
 </html>

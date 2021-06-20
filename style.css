@@ -1,0 +1,75 @@
+
+body {
+
+}
+
+p
+{
+  font-family: "Courier New";
+  font-size: 1.1em;
+}
+
+h1
+{
+  font-family: "Trebuchet MS";
+  text-align: center;
+  font-size: 3.0em;
+}
+
+h2
+{
+  font-family: "Trebuchet MS";
+  text-align: center;
+  font-size: 2.0em;
+}
+
+.introduction
+{
+  text-align: center;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+#objectives_form {
+  background-color: rgba(252, 255, 255, 0.7);
+  margin-bottom: 20px;
+  width: 300px;
+  padding: 20px;
+}
+
+.section
+{
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom:20px;
+}
+
+#container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#title_section
+{
+  background-color: rgba(0.0, 150, 150, 0.7);
+}
+
+#objective_section
+{
+  background-color: rgba(0.0, 150, 150, 0.5);
+}
+
+#advancement_section
+{
+  background-color: rgba(0.0, 150, 150, 0.3);
+}
+
+#plan_proposition_section
+{
+  background-color: rgba(0.0, 150, 150, 0.5);
+}
