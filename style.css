@@ -5,8 +5,8 @@ body {
 
 p
 {
-  font-family: "Courier New";
-  font-size: 1.1em;
+  font-family: "Trebuchet MS";
+  font-size: 1.0em;
 }
 
 h1
@@ -39,6 +39,11 @@ figure > img{
   text-align: center;
   font-size: 1.3em;
   font-style: italic;
+}
+
+.field
+{
+  padding-bottom = 10px;
 }
 
 #objectives_form {
