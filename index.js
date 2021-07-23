@@ -1,6 +1,6 @@
 let incomeField = document.getElementById('income_field');
 
-/*pour chaque année
+/*pour chaque periode
 versementscumules = epargne X nbperiodes
 capitalperiode = totalperiode -1 + epargne
 interetsperiode = capitalperiode X rendementperiode
