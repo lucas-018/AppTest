@@ -49,7 +49,7 @@ figure > img{
 #objectives_form {
   background-color: rgba(252, 255, 255, 0.7);
   margin-bottom: 20px;
-  width: 300px;
+  width: 420px;
   padding: 20px;
 }
 
@@ -76,7 +76,7 @@ figure > img{
   flex-wrap: wrap;
 }
 
-#graph_zone
+#result_zone
 {
   width=70%;
   margin-left=50px;
@@ -105,4 +105,17 @@ figure > img{
 #plan_proposition_section
 {
   background-color: rgba(0.0, 150, 150, 0.5);
+}
+
+table{
+  border-collapse: separate;
+  border-spacing: 0 7px;
+  background-color: rgba(240, 255, 255, 0.7);
+}
+
+table tr td {
+  /*border: 1px solid black;
+  border-collapse: collapse;*/
+  padding-left: 50px !important;
+  background-color:rgba(252, 255, 255, 0.7);
 }
