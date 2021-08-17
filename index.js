@@ -85,7 +85,7 @@ function lanchTableComputationAndDisplay()
   let capitalDepart = Number(document.getElementById('capitalDepart').value);
 
   let epargneParPeriode = Number(document.getElementById('epargneParPeriode').value);
-  let rendementParPeriode = Number(document.getElementById('rendementParPeriode').value);
+  let rendementParPeriode = Number(document.getElementById('rendementParPeriode').value)/100;
   let nbPeriodesTotal = Number(document.getElementById('nbPeriodesTotal').value);
 
   table = calculerTableau(capitalDepart, epargneParPeriode, rendementParPeriode, nbPeriodesTotal);
@@ -95,7 +95,7 @@ function lanchTableComputationAndDisplay()
   var newTBody = document.createElement('tbody');
   newTBody.setAttribute("id", "resultBody")
 
-  for (var i = 0; i < table.versementsCumules.length; i++) {
+  for (var i = 1; i < table.versementsCumules.length; i++) {
     var row = document.createElement("TR");
 
     var indexCell = document.createElement("TD");
@@ -106,18 +106,20 @@ function lanchTableComputationAndDisplay()
     var interetsCumulesCell = document.createElement("TD");
 
     row.appendChild(indexCell);
-    row.appendChild(versementsCumulesCell);
     row.appendChild(capitalCell);
     row.appendChild(interetsCell);
-    row.appendChild(totalCell);
+    row.appendChild(versementsCumulesCell);
     row.appendChild(interetsCumulesCell);
+    row.appendChild(totalCell);
+
+
 
     indexCell.appendChild(document.createTextNode(i));
-    versementsCumulesCell.appendChild(document.createTextNode(table.versementsCumules[i]));
-    capitalCell.appendChild(document.createTextNode(table.capital[i]));
-    interetsCell.appendChild(document.createTextNode(table.interets[i]));
-    totalCell.appendChild(document.createTextNode(table.total[i]));
-    interetsCumulesCell.appendChild(document.createTextNode(table.interetsCumules[i]));
+    versementsCumulesCell.appendChild(document.createTextNode(Number(table.versementsCumules[i]).toFixed(2)));
+    capitalCell.appendChild(document.createTextNode(Number(table.capital[i]).toFixed(2)));
+    interetsCell.appendChild(document.createTextNode(Number(table.interets[i]).toFixed(2)));
+    totalCell.appendChild(document.createTextNode(Number(table.total[i]).toFixed(2)));
+    interetsCumulesCell.appendChild(document.createTextNode(Number(table.interetsCumules[i]).toFixed(2)));
 
     newTBody.appendChild(row);
   }

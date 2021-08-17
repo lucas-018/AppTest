@@ -8,72 +8,79 @@
     </head>
 
     <body>
+      <div id = "baniere_section">
+        <img src="images/Baniere.jpg" alt="Baniere" width=1520px>
+      </div>
       <div class = "section" id = "title_section">
       <h1>Calculette</h1>
-        <p class="introduction" > Cette formidable Calculette qui peut vous aider à construire la vie de vos rêves (en toute humilité bien entendu) vous est proposée par Boursière. N'hésitez pas à venir nous voir sur Youtube. </p>
+        <!-- <p class="introduction" > Cette formidable Calculette qui peut vous aider à construire la vie de vos rêves (en toute humilité bien entendu) vous est proposée par Boursière. </p> -->
+        <p class="introduction" > Cette formidable petite calculette aimerait vous aider à définir vos objectifs de patrimoine, ainsi que des objectifs d'épargne ou d'investissement pour les atteindre.
+        Dans cette toute première version (toute simple, mais qui sera enrichie au fur et à mesure !), vous pouvez calculer :
+        - le patrimoine que vous atteindrez avec une épargne régulière, à la fin de chaque mois ou de chaque année,
+        - la répartition entre vos versements cumulés et les intérêts cumulés (et avec le temps, les intérêts représenteront une part de plus en plus importante de votre patrimoine !)
+        </p>
       </div>
 
       <div id="container">
 
         <div class="section" id = "objective_section">
-          <h2> Définissez vos objectifs </h2>
-            <p>Ici, vous pouvez définir vos premiers objectifs d'investissement et construire la première version d'un plan pour y parvenir. Ne vous inquiétez pas,vous pourrez toujours les faire évoluer.</p>
-
-            <div id = "work_zone">
+          <!-- <h2> Définissez vos objectifs </h2> -->
+            <!-- <p>Ici, vous pouvez définir vos premiers objectifs d'investissement et construire la première version d'un plan pour y parvenir. Ne vous inquiétez pas,vous pourrez toujours les faire évoluer.</p> -->
 
             <div id="form_zone">
             <form id="objectives_form">
 
               <div class="field"><p>Votre capital de départ: <input type="text" id="capitalDepart" value="0" /></p></div>
 
-              <div class="field"><p>Votre capacité d'épargne: <input type="text" id="epargneParPeriode" value="200" /></p></div>
+              <div class="field"><p>Epargne par période: <input type="text" id="epargneParPeriode" value="200" /></p></div>
 
-              <div class="field"><p>Fréquence de l'épargne: <input type="text" id="frequence" value="12" /></p></div>
+              <div class="field"><p>Type de période:
+              <select id="selection">
+                <option value="choixinterets">Annuelle</option>
+                <option value="choixpatrimoine">Mensuelle</option>
+              </select>
+            </p></div>
 
               <div class="field"><p>Nombre de périodes: <input type="text" id="nbPeriodesTotal" value="10" /></p></div>
 
-              <div class="field"><p>Rendement espéré par période: <input type="text" id="rendementParPeriode" value="0.1" /></p></div>
+              <div class="field"><p>Rendement espéré par période (%): <input type="text" id="rendementParPeriode" value="10" /></p></div>
 
-              <div class="field"><p>Inflation attendue par période: <input type="text" id="inflationannuelle" value="0.0" /></p></div>
+              <!-- <div class="field"><p>Inflation attendue par période: <input type="text" id="inflationannuelle" value="0.0" /></p></div> -->
 
-              <div class="field"><p>Votre objectif principal:
+              <!-- <div class="field"><p>Votre objectif principal:
               <select id="selection">
                 <option>Choisissez une valeur</option>
                 <option value="choixpatrimoine">Atteindre un objectif défini de patrimoine</option>
                 <option value="choixinterets">Vivre des intérêts de vos investissements</option>
                 <option value="choixretraite">Travailler moins tout en garantissant votre future retraite</option>
               </select>
-            </p></div>
+            </p></div> -->
 
           </form>
           <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Calculer :)</button>
         </div>
+        <div id="result_zone">
+          <table id="resultTable">
+            <thead>
+              <tr>
+                <th>Periode</th>
+                <th>Capital en début de période</th>
+                <th>Intérêts</th>
+                <th>Versements Cumulés</th>
+                <th>Intérêts Cumulés</th>
+                <th>Capital en fin de période</th>
+              </tr>
+            </thead>
+            <tbody id="resultBody">
 
+            </tbody>
 
-          <div id="result_zone">
-            <table id="resultTable">
-              <thead>
-                <tr>
-                  <th>Periode N°</th>
-                  <th>Versements Cumulés</th>
-                  <th>Capital</th>
-                  <th>Intérêts</th>
-                  <th>Total</th>
-                  <th>Intérêts Cumulés</th>
-                </tr>
-              </thead>
-              <tbody id="resultBody">
-                
-              </tbody>
-
-            </table>
-          </div>
-
-          </div>
+          </table>
+        </div>
 
         </div>
 
-        <div class="section" id = "advancement_section">
+        <!-- <div class="section" id = "advancement_section">
           <h2> Suivez votre avancement </h2>
             <p>Ici, vous pouvez renseigner votre avancement au fur et à mesure pour le comparer avec vos objectifs. Si vous vous en écartez, pas d'inquiétude ! Nous vous proposerons d'autres plans mis à jour pour tenir vos objectifs, ou de nouveaux objectifs plus réalistes, compte tenu de votre situation actuelle.</p>
         </div>
@@ -81,7 +88,7 @@
         <div class="section" id = "plan_proposition_section">
           <h2> Votre plan mis à jour </h2>
             <p> C'est ici que vous retrouvez une projection de vos résultats dans le futur et en fonction de votre avancement réel, une proposition de plan mis à jour pour tenir vos objectifs, ou des suggestions pour faire évoluer vos objectifs ! </p>
-        </div>
+        </div> -->
       </div>
 
     </body>

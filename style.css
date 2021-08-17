@@ -1,6 +1,5 @@
 
 body {
-
 }
 
 p
@@ -30,9 +29,9 @@ figcaption
   text-align: center;
 }
 
-figure > img{
+/* figure > img{
   width:500px;
-}
+} */
 
 .introduction
 {
@@ -46,10 +45,12 @@ figure > img{
   padding-bottom = 10px;
 }
 
+
+
 #objectives_form {
   background-color: rgba(252, 255, 255, 0.7);
   margin-bottom: 20px;
-  width: 420px;
+  width: 500px;
   padding: 20px;
 }
 
@@ -70,22 +71,19 @@ figure > img{
   align-items: center;
 }
 
-#work_zone
+#form_zone
 {
-  display: flex;
-  flex-wrap: wrap;
+  padding-bottom=50px;
 }
 
 #result_zone
 {
+  display:block;
   width=70%;
-  margin-left=50px;
+  margin=10px;
 }
 
-#graph
-{
-  float: right;
-}
+
 
 #title_section
 {
@@ -99,7 +97,7 @@ figure > img{
 
 #advancement_section
 {
-  background-color: rgba(0.0, 150, 150, 0.3);
+  background-color: rgba(0.0, 150, 150, 0.3); 
 }
 
 #plan_proposition_section
@@ -108,6 +106,7 @@ figure > img{
 }
 
 table{
+  margin-top=50px;
   border-collapse: separate;
   border-spacing: 0 7px;
   background-color: rgba(240, 255, 255, 0.7);
@@ -116,6 +115,14 @@ table{
 table tr td {
   /*border: 1px solid black;
   border-collapse: collapse;*/
-  padding-left: 50px !important;
+  text-align: left;
+  padding-right: 50px !important;
   background-color:rgba(252, 255, 255, 0.7);
+  text-align: left;
+
+}
+
+th {
+  padding-right: 50px !important;
+  text-align: left;
 }
