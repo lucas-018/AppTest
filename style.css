@@ -33,25 +33,39 @@ figcaption
   width:500px;
 } */
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .introduction
 {
-  text-align: center;
-  font-size: 1.3em;
-  font-style: italic;
+  text-align: left;
+  font-size: 1.0em;
 }
 
 .field
 {
-  padding-bottom = 10px;
+  padding-bottom: 0px;
 }
 
-
+#form_zone
+{
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
 
 #objectives_form {
   background-color: rgba(252, 255, 255, 0.7);
   margin-bottom: 20px;
   width: 500px;
   padding: 20px;
+}
+
+#launchingButton
+{
+  font-family: "Trebuchet MS";
+  font-size: 1.0em;
 }
 
 .section
@@ -71,19 +85,11 @@ figcaption
   align-items: center;
 }
 
-#form_zone
-{
-  padding-bottom=50px;
-}
-
 #result_zone
 {
-  display:block;
-  width=70%;
-  margin=10px;
+  display: block;
+  width: 70%;
 }
-
-
 
 #title_section
 {
@@ -95,18 +101,7 @@ figcaption
   background-color: rgba(0.0, 150, 150, 0.5);
 }
 
-#advancement_section
-{
-  background-color: rgba(0.0, 150, 150, 0.3); 
-}
-
-#plan_proposition_section
-{
-  background-color: rgba(0.0, 150, 150, 0.5);
-}
-
 table{
-  margin-top=50px;
   border-collapse: separate;
   border-spacing: 0 7px;
   background-color: rgba(240, 255, 255, 0.7);
@@ -118,11 +113,23 @@ table tr td {
   text-align: left;
   padding-right: 50px !important;
   background-color:rgba(252, 255, 255, 0.7);
-  text-align: left;
-
+  font-family: "Trebuchet MS";
+  font-size: 0.8em;
 }
 
 th {
   padding-right: 50px !important;
   text-align: left;
+  font-family: "Trebuchet MS";
+  font-size: 0.8em;
+}
+
+#advancement_section
+{
+  background-color: rgba(0.0, 150, 150, 0.3);
+}
+
+#plan_proposition_section
+{
+  background-color: rgba(0.0, 150, 150, 0.5);
 }
