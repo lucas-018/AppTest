@@ -87,6 +87,12 @@ function lanchTableComputationAndDisplay()
   let epargneParPeriode = Number(document.getElementById('epargneParPeriode').value);
   let rendementParPeriode = Number(document.getElementById('rendementParPeriode').value)/100;
   let nbPeriodesTotal = Number(document.getElementById('nbPeriodesTotal').value);
+  let choixFrequence = document.getElementById('frequence').value
+  if(choixFrequence == "mensuelle")
+  {
+    rendementParPeriode = rendementParPeriode/12
+    nbPeriodesTotal = nbPeriodesTotal*12
+  }
 
   table = calculerTableau(capitalDepart, epargneParPeriode, rendementParPeriode, nbPeriodesTotal);
 
@@ -112,8 +118,6 @@ function lanchTableComputationAndDisplay()
     row.appendChild(interetsCumulesCell);
     row.appendChild(totalCell);
 
-
-
     indexCell.appendChild(document.createTextNode(i));
     versementsCumulesCell.appendChild(document.createTextNode(Number(table.versementsCumules[i]).toFixed(2)));
     capitalCell.appendChild(document.createTextNode(Number(table.capital[i]).toFixed(2)));
@@ -127,4 +131,11 @@ function lanchTableComputationAndDisplay()
   var oldTBody = document.getElementById("resultBody");
   oldTBody.parentNode.replaceChild(newTBody, oldTBody)
 
+  document.getElementById("capitalFinal").value = Number(table.total[nbPeriodesTotal]).toFixed(2);
+  //capitalFinal.value = "hello";//table.total[nbPeriodes-1];
+
+  document.getElementById("resultatVersements").innerHTML = "<p>Le total de vos versements: &nbsp;" + Number(table.versementsCumules[nbPeriodesTotal]).toFixed(2) + "</p>";
+
+  //document.getElementById("resultatInterets").innerHTML;
+  document.getElementById("resultatInterets").innerHTML = "<p>Le total des intérêts reçus: &nbsp;" + Number(table.interetsCumules[nbPeriodesTotal]).toFixed(2) + "</p>";
 }

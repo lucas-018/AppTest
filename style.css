@@ -56,7 +56,7 @@ img {
 }
 
 #objectives_form {
-  background-color: rgba(252, 255, 255, 0.7);
+  background-color: rgba(0.0, 150, 150, 0.3);
   margin-bottom: 20px;
   width: 500px;
   padding: 20px;
@@ -96,15 +96,15 @@ img {
   background-color: rgba(0.0, 150, 150, 0.7);
 }
 
-#objective_section
+/* #objective_section
 {
   background-color: rgba(0.0, 150, 150, 0.5);
-}
+} */
 
 table{
   border-collapse: separate;
   border-spacing: 0 7px;
-  background-color: rgba(240, 255, 255, 0.7);
+  background-color: rgba(0.0, 150, 150, 0.3);
 }
 
 table tr td {
@@ -131,5 +131,5 @@ th {
 
 #plan_proposition_section
 {
-  background-color: rgba(0.0, 150, 150, 0.5);
+  background-color: rgba(0.0, 150, 150, 0.3);
 }

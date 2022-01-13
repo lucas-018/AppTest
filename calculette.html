@@ -13,9 +13,11 @@
       </div>
       <div class = "section" id = "title_section">
       <h1>Calculette</h1>
+
         <!-- <p class="introduction" > Cette formidable Calculette qui peut vous aider à construire la vie de vos rêves (en toute humilité bien entendu) vous est proposée par Boursière. </p> -->
-        <p class="introduction" > Cette formidable petite calculette aimerait vous aider à définir vos objectifs de patrimoine, ainsi que des objectifs d'épargne ou d'investissement pour les atteindre.
-        Dans cette toute première version (toute simple, mais qui sera enrichie au fur et à mesure !), vous pouvez calculer : le patrimoine que vous atteindrez avec une épargne régulière, à la fin de chaque mois ou de chaque année, ainsi que la répartition entre vos versements cumulés et les intérêts cumulés (et avec le temps, les intérêts représenteront une part de plus en plus importante de votre patrimoine !)
+        <p class="introduction" > Cette petite calculette aimerait vous aider à définir vos objectifs de patrimoine, ainsi que des objectifs d'épargne pour les atteindre.
+
+        Dans cette toute première version (qui sera enrichie au fur et à mesure !) vous pouvez calculer : le patrimoine que vous atteindrez avec une épargne régulière, ainsi que la répartition entre vos versements et les intérêts perçus (et avec le temps, les intérêts représenteront une part de plus en plus importante de votre patrimoine !)
         </p>
       </div>
 
@@ -30,18 +32,18 @@
 
               <div class="field"><p>Votre capital de départ: <input type="text" id="capitalDepart" value="0" /></p></div>
 
-              <div class="field"><p>Epargne par période: <input type="text" id="epargneParPeriode" value="200" /></p></div>
+              <div class="field"><p>Votre épargne: <input type="text" id="epargneParPeriode" value="200" /></p></div>
 
-              <div class="field"><p>Type de période:
-              <select id="selection">
-                <option value="choixinterets">Annuelle</option>
-                <option value="choixpatrimoine">Mensuelle</option>
+              <div class="field"><p>Périodicité:
+              <select id="frequence">
+                <option value="annuelle">annuelle</option>
+                <option value="mensuelle">mensuelle</option>
               </select>
             </p></div>
 
-              <div class="field"><p>Nombre de périodes: <input type="text" id="nbPeriodesTotal" value="10" /></p></div>
 
-              <div class="field"><p>Rendement espéré par période (%): <input type="text" id="rendementParPeriode" value="10" /></p></div>
+            <div class="field"><p>Nombre d'années: <input type="text" id="nbPeriodesTotal" value="10" /></p></div>
+              <div class="field"><p>Rendement annuel espéré (%): <input type="text" id="rendementParPeriode" value="10" /></p></div>
 
               <!-- <div class="field"><p>Inflation attendue par période: <input type="text" id="inflationannuelle" value="0.0" /></p></div> -->
 
@@ -53,11 +55,19 @@
                 <option value="choixretraite">Travailler moins tout en garantissant votre future retraite</option>
               </select>
             </p></div> -->
+            <p class="introduction" >
+              Note : Nous supposons que l'épargne est versée au début de chaque période (mois ou année). C'est une bonne pratique !
+            </p>
+            <div class="field"><p>Votre capital final: <input type="text" id="capitalFinal" value="0" /></p></div>
 
           </form>
-          <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Calculer :)</button>
+          <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Découvrir le résultat !</button>
         </div>
+
         <div id="result_zone">
+          <div id="resultatVersements"><p>Le total de vos versements:</p> </div>
+          <div id="resultatInterets"><p>Le total des intérêts reçus: </p></div>
+
           <table id="resultTable">
             <thead>
               <tr>
@@ -70,7 +80,6 @@
               </tr>
             </thead>
             <tbody id="resultBody">
-
             </tbody>
 
           </table>
@@ -91,3 +100,16 @@
 
     </body>
 </html>
+
+
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Refresh" content="0;url=defaultsite" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+</head>
+<body>
+</body>
+</html> -->
