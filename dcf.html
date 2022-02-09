@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <meta charset="utf-8" />
+      <title>Mon prix cible</title>
+      <script type="text/javascript" src="index.js"></script>
+    </head>
+
+    <body>
+      <div id = "baniere_section">
+        <img src="images/Baniere.jpg" alt="Baniere">
+      </div>
+      <div class = "section" id = "title_section">
+
+      <a href ="calculette.html">Menu</a>
+
+      <h1>Mon prix cible</h1>
+
+        <p class="introduction" > Cet outil permet, à partir d'une méthode d'actualisation des résultats futurs attendus (dividendes, free cash flow, bénéfice par action...), de déterminer le prix auquel vous serez prêt à faire un investissement.
+        </p>
+      </div>
+
+      <div id="container">
+
+        <div class="section" id = "objective_section">
+
+            <div id="form_zone">
+            <form id="objectives_form">
+
+              <div class="field"><p>Paramètre à actualiser:
+              <select id="typeFlux">
+                <option value="FCF">Free cash flow</option>
+                <option value="BPA">Bénéfice par action</option>
+                <option value="dividendes">Dividendes</option>
+              </select>
+
+              <p class="introduction" >
+                Note : Nous supposons que nous sommes au début de la première année de détention de notre investissement et que les résultats sont obtenus à la fin de chaque année.
+                Le résultat de l'année passée sert de référence pour calculer les résultats de la première année.
+              </p>
+
+              <div class="field"><p>Nombre d'années de détention: <input type="text" id="dureeDetention" value="10" /></p></div>
+
+              <div class="field"><p>Résultat de l'année passée: <input type="text" id="flux0" value="0" /></p></div>
+
+              <div class="field"><p>Croissance annuelle attendue (%): <input type="text" id="croissanceFlux" value="10" /></p></div>
+
+            <div class="field"><p>Taux sans risque (%): <input type="text" id="tauxSansRisque" value="1" /></p></div>
+
+            <div class="field"><p>Rendement additionnel exigé (%): <input type="text" id="tauxRisque" value="10" /></p></div>
+
+            <div class="field"><p>Nombre de parts: <input type="text" id="nombreParts" value="0" /></p></div>
+
+            <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
+
+            </p></div>
+
+          </form>
+
+          <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Découvrir le résultat !</button>
+        </div>
+
+        <div id="result_zone">
+          <div id="prixCible"><p>Mon prix cible:</p> </div>
+          <div id="potentiel"><p>Ma plus value potentielle: </p></div>
+
+          <table id="resultTable">
+            <thead>
+              <tr>
+                <th>Periode</th>
+                <th>Capital début</th>
+                <th>Intérêts</th>
+                <th>Versements Cumulés</th>
+                <th>Intérêts Cumulés</th>
+                <th>Capital final</th>
+              </tr>
+            </thead>
+            <tbody id="resultBody">
+            </tbody>
+
+          </table>
+        </div>
+
+        </div>
+      </div>
+    </body>
+</html>
+
+
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Refresh" content="0;url=defaultsite" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+</head>
+<body>
+</body>
+</html> -->
