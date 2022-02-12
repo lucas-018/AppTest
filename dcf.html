@@ -28,7 +28,7 @@
             <div id="form_zone">
             <form id="objectives_form">
 
-              <div class="field"><p>Paramètre à actualiser:
+              <div class="field"><p>Type de montants à actualiser:
               <select id="typeFlux">
                 <option value="FCF">Free cash flow</option>
                 <option value="BPA">Bénéfice par action</option>
@@ -36,23 +36,27 @@
               </select>
 
               <p class="introduction" >
-                Note : Nous supposons que nous sommes au début de la première année de détention de notre investissement et que les résultats sont obtenus à la fin de chaque année.
-                Le résultat de l'année passée sert de référence pour calculer les résultats de la première année.
+                Note : Nous supposons que nous sommes au début de la première année de détention et que les résultats sont obtenus à la fin de chaque année.
               </p>
 
-              <div class="field"><p>Nombre d'années de détention: <input type="text" id="dureeDetention" value="10" /></p></div>
+              <div class="field"><p>Nombre d'années de détention: <input type="text" id="nbPeriodes" value="10" /></p></div>
 
-              <div class="field"><p>Résultat de l'année passée: <input type="text" id="flux0" value="0" /></p></div>
+              <div class="field"><p>Montant de la première année: <input type="text" id="flux1" value="0" /></p></div>
 
               <div class="field"><p>Croissance annuelle attendue (%): <input type="text" id="croissanceFlux" value="10" /></p></div>
 
-            <div class="field"><p>Taux sans risque (%): <input type="text" id="tauxSansRisque" value="1" /></p></div>
 
-            <div class="field"><p>Rendement additionnel exigé (%): <input type="text" id="tauxRisque" value="10" /></p></div>
+              <div class="field"><p>Rendement sans risque (%): <input type="text" id="tauxSansRisque" value="1" /></p></div>
 
-            <div class="field"><p>Nombre de parts: <input type="text" id="nombreParts" value="0" /></p></div>
+              <div class="field"><p>Rendement additionnel exigé (%): <input type="text" id="tauxRisque" value="10" /></p></div>
 
-            <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
+              <p class="introduction" >
+              Attention: Les résultats sont très sensibles aux taux de croissance attendue et de rendements exigés ! Restez conservateur.
+              </p>
+
+              <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
+
+              <div class="field"><p>Nombre de parts: <input type="text" id="nombreParts" value="0" /></p></div>
 
             </p></div>
 
@@ -62,18 +66,18 @@
         </div>
 
         <div id="result_zone">
+          <div id="totalFlux"><p>Somme des montants actualisés:</p> </div>
+          <div id="prixRevente"><p>Prix de revente actualisé:</p> </div>
+          <div id="capitalisationCible"><p>Ma capitalisation cible:</p> </div>
           <div id="prixCible"><p>Mon prix cible:</p> </div>
           <div id="potentiel"><p>Ma plus value potentielle: </p></div>
 
           <table id="resultTable">
             <thead>
               <tr>
-                <th>Periode</th>
-                <th>Capital début</th>
-                <th>Intérêts</th>
-                <th>Versements Cumulés</th>
-                <th>Intérêts Cumulés</th>
-                <th>Capital final</th>
+                <th>Année</th>
+                <th>Montant</th>
+                <th>Montant actualisé</th>
               </tr>
             </thead>
             <tbody id="resultBody">

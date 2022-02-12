@@ -4,6 +4,8 @@
 
 
 /*
+Calculette
+
 données:
 - epargne (par periode)
 - periode (an, mois)
@@ -90,7 +92,7 @@ function lanchTableComputationAndDisplay()
   let choixFrequence = document.getElementById('frequence').value
   if(choixFrequence == "mensuelle")
   {
-    rendementParPeriode = rendementParPeriode/12
+    rendementParPeriode = Math.pow(rendementParPeriode+1, 1.0 / 12) - 1.0;
     nbPeriodesTotal = nbPeriodesTotal*12
   }
 
@@ -138,4 +140,81 @@ function lanchTableComputationAndDisplay()
 
   //document.getElementById("resultatInterets").innerHTML;
   document.getElementById("resultatInterets").innerHTML = "<p>Le total des intérêts reçus: &nbsp;" + Number(table.interetsCumules[nbPeriodesTotal]).toFixed(2) + "</p>";
+}
+
+
+
+/*
+DCF
+
+données:
+- valeurs à actualiser
+- durée de détention
+- résultat de la 1ere année
+- croissance annuelle
+- taux sans risque
+- taux avec risque
+
+pour chaque periode:
+flux(periode) = flux1 * Math.pow(1+croissanceFlux;periode)
+fluxActualise=flux/Math.pow(1+tauxRisque+tauxSansRisque,periode)
+
+prix de revente:
+prixRevente=flux(derniereperiode)/croissanceFlux
+prixReventeActualise=prixRevente/Math.pow(1+tauxRisque+tauxSansRisque;nbPeriodes)
+
+capitalisationCible = somme des flux + revente
+prixCible=capitalisationCible/nombreParts
+potentiel=(prixCible-cours)/prixCible
+
+*/
+
+function calculerFluxPeriode(flux1, croissanceFlux, nbPeriodes)
+{
+      var tableFlux = [flux1];
+      for (var periode = 1; periode <= nbPeriodes; i++) {
+          tableFlux.push(table[periode-1] * (1+croissanceFlux));
+      }
+      return tableFlux;
+}
+var tableFlux=calculerFluxPeriode(flux1, croissanceFlux, nbPeriodes);
+
+function calculerFluxPeriodeActualise(tableFlux, tauxSansRisque, tauxRisque)
+{
+      var tableFluxActualise = [flux1];
+      for (var periode = 1; periode <= nbPeriodes; i++) {
+          tableFluxActualise.push(table[periode]) /Math.pow(1+tauxSansRisque+tauxRisque,periode);
+      }
+      return tableFluxActualise;
+}
+var tableFluxActualise=calculerFluxPeriode(tableFlux, tauxSansRisque, tauxRisque);
+
+function calculerPrixRevente (tableFlux, tauxSansRisque, tauxRisque)
+{
+    return tableFlux [[tableFlux.length-1]]/Math.pow(1+tauxSansRisque+tauxRisque,nbPeriodes);
+}
+var prixRevente=calculerPrixRevente(tableFlux, tauxSansRisque, tauxRisque);
+
+function calculerPrixReventeActualise (prixRevente, tauxSansRisque, tauxRisque)
+{
+    return prixRevente/Math.pow(1+tauxSansRisque+tauxRisque,nbPeriodes);
+  }
+var prixReventeActualise=calculerPrixReventeActualise(prixRevente, tauxSansRisque, tauxRisque);
+
+function calculerTotalFluxActualises (tableFluxActualise)
+{
+        var totalFlux=0
+        for (var periode = 1; periode <= nbPeriodes; i++) {totalFlux+tableFluxActualise.push(table[periode]);
+        }
+        return totalFlux;
+}
+
+function calculerCapitalisationCible (totalFlux, prixReventeActualise)
+{
+  return totalFlux + prixReventeActualise;
+}
+
+function calculerPrixnCible (totalFlux, prixReventeActualise, nombreParts)
+{
+  return (totalFlux + prixReventeActualise)/nombreParts;
 }
