@@ -11,14 +11,16 @@
       <div id = "baniere_section">
         <img src="images/Baniere.jpg" alt="Baniere">
       </div>
+
       <div class = "section" id = "title_section">
 
-      <a href ="dcf.html">Menu</a>
+      <a href ="dcf.html">Mon prix cible</a>
 
       <h1>Ma calculette épargne</h1>
 
-        <p class="introduction" > Dans cette première version de calculette, vous pouvez calculer le patrimoine que vous atteindrez avec une épargne régulière, ainsi que la répartition que vous atteindrez entre vos versements et les intérêts (et avec le temps, les intérêts représenteront une part de plus en plus importante de votre patrimoine !)
+        <p class="introduction" > Avec cette calculette, vous pouvez calculer le patrimoine que vous atteindrez avec une épargne régulière, ainsi que la répartition entre vos versements et les intérêts perçus (et avec le temps, les intérêts représenteront une part de plus en plus importante de votre patrimoine !)
         </p>
+
       </div>
 
       <div id="container">
@@ -41,15 +43,16 @@
 
 
             <div class="field"><p>Nombre d'années: <input type="text" id="nbPeriodesTotal" value="10" /></p></div>
-              <div class="field"><p>Rendement annuel espéré (%): <input type="text" id="rendementParPeriode" value="10" /></p></div>
+
+            <div class="field"><p>Rendement annuel espéré (%): <input type="text" id="rendementParPeriode" value="10" /></p></div>
 
             <p class="introduction" >
               Note : Nous supposons que l'épargne est versée au début de chaque période (mois ou année). C'est une bonne pratique !
             </p>
+
             <div class="field"><p>Votre capital final: <input type="text" id="capitalFinal" value="0" /></p></div>
 
-          </form>
-          <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Découvrir le résultat !</button>
+          <button id="launchingButton" type="button" onclick = "launchTableComputationAndDisplay();">Découvrir le résultat !</button>
         </div>
 
         <div id="result_zone">

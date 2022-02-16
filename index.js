@@ -80,12 +80,11 @@ function calculerTableau(capitalDepart, epargneParPeriode, rendementParPeriode, 
   return table;
 }
 
-function lanchTableComputationAndDisplay()
+function launchTableComputationAndDisplay()
 {
   console.log(document.getElementById('capitalDepart').value);
 
   let capitalDepart = Number(document.getElementById('capitalDepart').value);
-
   let epargneParPeriode = Number(document.getElementById('epargneParPeriode').value);
   let rendementParPeriode = Number(document.getElementById('rendementParPeriode').value)/100;
   let nbPeriodesTotal = Number(document.getElementById('nbPeriodesTotal').value);
@@ -181,7 +180,7 @@ var tableFlux=calculerFluxPeriode(flux1, croissanceFlux, nbPeriodes);
 
 function calculerFluxPeriodeActualise(tableFlux, tauxSansRisque, tauxRisque)
 {
-      var tableFluxActualise = [flux1];
+      var tableFluxActualise = [fluxActualise1];
       for (var periode = 1; periode <= nbPeriodes; i++) {
           tableFluxActualise.push(table[periode]) /Math.pow(1+tauxSansRisque+tauxRisque,periode);
       }
@@ -189,9 +188,9 @@ function calculerFluxPeriodeActualise(tableFlux, tauxSansRisque, tauxRisque)
 }
 var tableFluxActualise=calculerFluxPeriode(tableFlux, tauxSansRisque, tauxRisque);
 
-function calculerPrixRevente (tableFlux, tauxSansRisque, tauxRisque)
+function calculerPrixRevente (tableFlux, cours, nombreParts, flux1)
 {
-    return tableFlux [[tableFlux.length-1]]/Math.pow(1+tauxSansRisque+tauxRisque,nbPeriodes);
+    return tableFlux [[tableFlux.length-1]]*(cours*nombreParts/flux1);
 }
 var prixRevente=calculerPrixRevente(tableFlux, tauxSansRisque, tauxRisque);
 
@@ -203,18 +202,29 @@ var prixReventeActualise=calculerPrixReventeActualise(prixRevente, tauxSansRisqu
 
 function calculerTotalFluxActualises (tableFluxActualise)
 {
-        var totalFlux=0
-        for (var periode = 1; periode <= nbPeriodes; i++) {totalFlux+tableFluxActualise.push(table[periode]);
+        var totalFluxActualises=0
+        for (var periode = 1; periode <= nbPeriodes; i++) {totalFluxActualises + tableFluxActualise.push(table[periode]);
         }
         return totalFlux;
 }
 
 function calculerCapitalisationCible (totalFlux, prixReventeActualise)
 {
-  return totalFlux + prixReventeActualise;
+  return totalFluxActualises + prixReventeActualise;
 }
 
 function calculerPrixnCible (totalFlux, prixReventeActualise, nombreParts)
 {
   return (totalFlux + prixReventeActualise)/nombreParts;
+}
+
+function launchTableComputationAndDisplayDCF()
+{
+  let flux1 = Number(document.getElementById('flux1').value);
+  let nbPeriodes = Number(document.getElementById('nbPeriodes').value);
+  let cours = Number(document.getElementById('cours').value);
+  let nombreParts = Number(document.getElementById('nombreParts').value);
+  let croissanceFlux = Number(document.getElementById('croissanceFlux').value)/100;
+  let tauxRisque = Number(document.getElementById('tauxRisque').value)/100;
+  let tauxSansRisque = Number(document.getElementById('tauxSansRisque').value)/100;
 }

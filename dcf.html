@@ -13,11 +13,11 @@
       </div>
       <div class = "section" id = "title_section">
 
-      <a href ="calculette.html">Menu</a>
+      <a href ="calculette.html">Ma calculette épargne</a>
 
       <h1>Mon prix cible</h1>
 
-        <p class="introduction" > Cet outil permet, à partir d'une méthode d'actualisation des résultats futurs attendus (dividendes, free cash flow, bénéfice par action...), de déterminer le prix auquel vous serez prêt à faire un investissement.
+        <p class="introduction" > Cet outil permet, à partir d'une méthode d'actualisation des résultats futurs attendus (dividendes, free cash flow, bénéfice par action, loyers...), de déterminer le prix auquel vous serez prêt à faire un investissement.
         </p>
       </div>
 
@@ -28,41 +28,51 @@
             <div id="form_zone">
             <form id="objectives_form">
 
+              <p class="introduction" >
+                <b>Mon analyse</b>
+              </p>
+
               <div class="field"><p>Type de montants à actualiser:
               <select id="typeFlux">
                 <option value="FCF">Free cash flow</option>
                 <option value="BPA">Bénéfice par action</option>
                 <option value="dividendes">Dividendes</option>
+                <option value="loyers">Loyers</option>
               </select>
 
               <p class="introduction" >
-                Note : Nous supposons que nous sommes au début de la première année de détention et que les résultats sont obtenus à la fin de chaque année.
+                Note : Nous supposons que nous sommes au début de la première année de détention et que les montants sont perçus à l'issue de chaque année.
               </p>
-
-              <div class="field"><p>Nombre d'années de détention: <input type="text" id="nbPeriodes" value="10" /></p></div>
 
               <div class="field"><p>Montant de la première année: <input type="text" id="flux1" value="0" /></p></div>
 
-              <div class="field"><p>Croissance annuelle attendue (%): <input type="text" id="croissanceFlux" value="10" /></p></div>
+              <div class="field"><p>Nombre d'années de détention: <input type="text" id="nbPeriodes" value="10" /></p></div>
 
+              <p class="introduction" >
+                <b>Mon investissement</b>
+              </p>
+
+              <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
+
+              <div class="field"><p>Nombre d'actions: <input type="text" id="nombreParts" value="0" /></p></div>
+
+              <p class="introduction" >
+                <b>Mes hypothèses</b>
+              </p>
+
+              <div class="field"><p>Croissance annuelle attendue (%): <input type="text" id="croissanceFlux" value="10" /></p></div>
 
               <div class="field"><p>Rendement sans risque (%): <input type="text" id="tauxSansRisque" value="1" /></p></div>
 
               <div class="field"><p>Rendement additionnel exigé (%): <input type="text" id="tauxRisque" value="10" /></p></div>
 
               <p class="introduction" >
-              Attention: Les résultats sont très sensibles aux taux de croissance attendue et de rendements exigés ! Restez conservateur.
+              Attention: Les résultats sont très sensibles au taux de croissance attendu et aux rendements exigés ! Restez conservateur.
               </p>
-
-              <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
-
-              <div class="field"><p>Nombre de parts: <input type="text" id="nombreParts" value="0" /></p></div>
 
             </p></div>
 
-          </form>
-
-          <button id="launchingButton" type="button" onclick = "lanchTableComputationAndDisplay();">Découvrir le résultat !</button>
+          <button id="launchingButton" type="button" onclick = "launchTableComputationAndDisplayDCF();">Découvrir le résultat !</button>
         </div>
 
         <div id="result_zone">
