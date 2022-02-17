@@ -17,7 +17,7 @@
 
       <h1>Mon prix cible</h1>
 
-        <p class="introduction" > Cet outil permet, à partir d'une méthode d'actualisation des résultats futurs attendus (free cash flow, dividendes par action, bénéfice par action ou loyers), de déterminer le prix auquel vous serez prêt à faire votre investissement.
+        <p class="introduction" > Cet outil permet, à partir d'une méthode d'actualisation des résultats futurs attendus (free cash flow, résultat net, dividendes par action ou bénéfice par action), de déterminer le prix auquel vous serez prêt à faire votre investissement.
         </p>
       </div>
 
@@ -28,46 +28,42 @@
             <div id="form_zone">
             <form id="objectives_form">
 
-              <p class="introduction" >
-                <b>Mon analyse</b>
-              </p>
-
               <div class="field"><p>Type de montants à actualiser:
               <select id="typeFlux">
                 <option value="FCF">Free cash flow</option>
+                <option value="resultat">Resultat net</option>
                 <option value="BPA">Bénéfice par action</option>
                 <option value="dividendes">Dividende par action</option>
-                <option value="loyers">Loyers</option>
               </select>
 
               <p class="introduction" >
                 Note : Nous supposons que nous sommes au début de la première année de détention et que les montants sont perçus à l'issue de chaque année.
               </p>
 
-              <div class="field"><p>Montant obtenu la première année: <input type="text" id="flux1" value="0" /></p></div>
-
-              <div class="field"><p>Nombre d'années de détention: <input type="text" id="nbPeriodes" value="10" /></p></div>
-
               <p class="introduction" >
                 <b>Mon investissement</b>
               </p>
 
-              <div class="field"><p>Cours actuel: <input type="text" id="cours" value="0" /></p></div>
+              <div class="field"><p>Nombre d'années de détention: <input type="text" id="nbPeriodes" value="10" /></p></div>
 
-              <div class="field"><p>Nombre d'actions: <input type="text" id="nombreParts" value="0" /></p></div>
+              <div class="field"><p>Cours actuel: <input type="text" id="cours" value="100" /></p></div>
+
+              <div class="field"><p>Nombre d'actions: <input type="text" id="nombreParts" value="100" /></p></div>
 
               <p class="introduction" >
                 <b>Mes hypothèses</b>
               </p>
 
+              <div class="field"><p>Montant espéré la première année: <input type="text" id="flux1" value="1000" /></p></div>
+
               <div class="field"><p>Croissance annuelle attendue (%): <input type="text" id="croissanceFlux" value="10" /></p></div>
 
-              <div class="field"><p>Rendement sans risque (%): <input type="text" id="tauxSansRisque" value="1" /></p></div>
+              <div class="field"><p>Rendement sans risque (%): <input type="text" id="tauxSansRisque" value="2" /></p></div>
 
               <div class="field"><p>Rendement additionnel exigé (%): <input type="text" id="tauxRisque" value="10" /></p></div>
 
               <p class="introduction" >
-              Attention: Les résultats sont très sensibles au taux de croissance attendu et aux rendements exigés ! Restez conservateur.
+              Attention: Les résultats sont très sensibles aux hypothèses que vous faites ! Restez conservateur.
               </p>
 
             </p></div>

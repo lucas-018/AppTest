@@ -88,7 +88,7 @@ function launchTableComputationAndDisplay()
   let epargneParPeriode = Number(document.getElementById('epargneParPeriode').value);
   let rendementParPeriode = Number(document.getElementById('rendementParPeriode').value)/100;
   let nbPeriodesTotal = Number(document.getElementById('nbPeriodesTotal').value);
-  let choixFrequence = document.getElementById('frequence').value
+  let choixFrequence = document.getElementById('frequence').value;
   if(choixFrequence == "mensuelle")
   {
     rendementParPeriode = Math.pow(rendementParPeriode+1, 1.0 / 12) - 1.0;
@@ -190,8 +190,12 @@ function calculerFluxPeriodeActualise(tableFlux, tauxSansRisque, tauxRisque)
 }
 
 
-function calculerPrixRevente(tableFlux, cours, nombreParts, flux1)
+function calculerPrixRevente(tableFlux, cours, nombreParts, flux1, typeFlux)
 {
+  if(typeFlux == "BPA" || typeFlux == "dividendes")
+    {
+      return tableFlux[tableFlux.length-1]*(cours/flux1);
+    }
     return tableFlux[tableFlux.length-1]*(cours*nombreParts/flux1);
 }
 
@@ -211,13 +215,20 @@ function calculerTotalFluxActualises(tableFluxActualise)
         return totalFluxActualises;
 }
 
-function calculerCapitalisationCible(totalFluxActualises, prixReventeActualise)
+function calculerCapitalisationCible(totalFluxActualises, prixReventeActualise, nombreParts, typeFlux)
 {
-  return totalFluxActualises + prixReventeActualise;
+  if(typeFlux == "BPA" || typeFlux == "dividendes")
+    {
+      return (totalFluxActualises + prixReventeActualise)*nombreParts;
+    }
+    return totalFluxActualises + prixReventeActualise;
 }
 
 function calculerPrixCible(totalFluxActualises, prixReventeActualise, nombreParts)
-{
+{  if(typeFlux == "BPA" || typeFlux == "dividendes")
+    {
+      return totalFluxActualises + prixReventeActualise;
+    }
   return (totalFluxActualises + prixReventeActualise)/nombreParts;
 }
 
@@ -227,24 +238,23 @@ function launchTableComputationAndDisplayDCF()
   let nbPeriodes = Number(document.getElementById('nbPeriodes').value);
   let cours = Number(document.getElementById('cours').value);
   let nombreParts = Number(document.getElementById('nombreParts').value);
+  let typeFlux = document.getElementById('typeFlux').value;
   let croissanceFlux = Number(document.getElementById('croissanceFlux').value)/100;
   let tauxRisque = Number(document.getElementById('tauxRisque').value)/100;
   let tauxSansRisque = Number(document.getElementById('tauxSansRisque').value)/100;
 
   var tableFlux = calculerFluxPeriode(flux1, croissanceFlux, nbPeriodes);
   var tableFluxActualise = calculerFluxPeriodeActualise(tableFlux, tauxSansRisque, tauxRisque);
-  var prixRevente = calculerPrixRevente(tableFlux, cours, nombreParts, flux1);
-
-
+  var prixRevente = calculerPrixRevente(tableFlux, cours, nombreParts, flux1, typeFlux);
 
   var prixReventeActualise = calculerPrixReventeActualise(prixRevente, tauxSansRisque, tauxRisque, nbPeriodes);
   var totalFluxActualises = calculerTotalFluxActualises(tableFluxActualise);
-  var capitalisationCible = calculerCapitalisationCible(totalFluxActualises, prixReventeActualise);
+  var capitalisationCible = calculerCapitalisationCible(totalFluxActualises, prixReventeActualise, nombreParts, typeFlux);
 
   console.log(totalFluxActualises);
   console.log(prixReventeActualise);
 
-  var prixCible = calculerPrixCible(totalFluxActualises, prixReventeActualise, nombreParts);
+  var prixCible = calculerPrixCible(totalFluxActualises, prixReventeActualise, nombreParts, typeFlux);
 
   var htmlTable = document.getElementById("resultTable");
 
